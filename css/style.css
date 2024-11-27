@@ -1,0 +1,2689 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --yellow:#ff3b3b;
+    --light-yellow:#ff8080;
+    --black:#130f40;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x:hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+.section{
+    padding: 2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 4.5rem;
+    color: var(--black);
+}
+
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before{
+    content: '';
+    position: absolute;
+    bottom: 1rem; left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--yellow);
+    clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    background: var(--light-yellow);
+    color: var(--black);
+    font-weight: 500;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.btn i {
+    margin-right: .5rem;
+}
+
+.btn:hover{
+    background: var(--yellow);
+}
+.header{
+    position: fixed;
+    top: 0; left:0; right:0;
+    z-index: 999;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 9%;
+    background: transparent; /* Transparent background */
+    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+    color: #fff; /* Set text color to white */
+    
+}
+
+.header .logo h2, 
+.header .navbar a, 
+.header #login-btn i {
+    color: #fff; /* White text for logo, navigation links, and icons */
+}
+
+.header .navbar a:hover {
+    color: var(--yellow); /* Optional: Change link color on hover */
+}
+
+.header.scrolled {
+    background: #fff; /* The background color when scrolling */
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1); /* Optional shadow for effect */
+}
+
+.header.scrolled .navbar a {
+    color: var(--black); /* Black text after scrolling */
+}
+
+.header.scrolled .logo h2, 
+.header.scrolled .navbar a, 
+.header.scrolled #login-btn i {
+    color: var(--black); /* Change text color back to black after scrolling */
+}
+
+
+.header .logo span{
+    color: var(--yellow);
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: #fff;
+}
+
+.header .navbar a:hover{
+    color: var (--yellow);
+}
+
+.header .btn{
+    margin-top: 0;
+}
+
+.header #login-btn i{
+    font-size: 2.5rem;
+    color: var(--light-yellow);
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+
+
+#login-btn {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+
+
+
+
+
+
+.user-profile {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.user-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.profile-buttons .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-buttons .btn:hover {
+    background-color: #555;
+}
+
+.profile-buttons .sign-out {
+    background-color: #e74c3c;
+}
+
+.profile-buttons .sign-out:hover {
+    background-color: #c0392b;
+}
+
+/* Add this to the end of your existing style.css */
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.user-name-container {
+    width: 100%;
+    background-image: url('image/car1.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+}
+
+.user-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 50px;
+}
+
+.profile-buttons .btn {
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.profile-buttons .btn:hover {
+    background-color: #555;
+}
+
+.profile-buttons .sign-out {
+    background-color: #e74c3c;
+}
+
+.profile-buttons .sign-out:hover {
+    background-color: #c0392b;
+}
+
+
+
+
+.home {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    min-height: 100vh; /* Ensure the section takes up at least the full viewport height */
+    padding-top: calc(10rem + 3rem); /* Account for header height */
+    background-image: url('../image/bg1.2jpg'); /* Correct path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.home .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the image covers the section */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Send the image to the background */
+}
+
+
+
+
+
+
+.home .home-content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.home h1 {
+    font-size: 1.1rem; /* Large font size for "Rent a Car" */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.home .subtitle {
+    font-size: 2.5rem; /* Smaller font size for "Choose date and book a car" */
+    margin-bottom: 7rem;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.form-rows {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Space between the date and time inputs */
+}
+
+.form-groups {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+.form-label {
+    font-size: 1.8rem; /* Label font size */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    
+}
+
+.form-inputs {
+    width: 275px; /* Adjust width as needed */
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.form-input1 {
+    width: 375px; /* Adjust width as needed */
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.form-inputs[type="date"],
+.form-inputs[type="time"],
+.form-inputs[type="text"],
+.form-inputs[type="email"],
+.form-inputs[type="tel"] {
+    background-color: white; /* Semi-transparent background for inputs */
+}
+
+/* Button styling */
+.form-button {
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: var(--yellow); /* Use your preferred button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: var(--light-yellow); /* Lighter shade on hover */
+}
+
+
+
+
+
+
+.home1 {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    height: 60vh; /* Adjust height */
+}
+
+.home1 .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Background image */
+}
+
+.home1 .home-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Text color */
+    padding: 1rem; /* Optional */
+   
+}
+
+.home1 h1{
+    font-size: 5vw;
+}
+
+.home1 .subtitle{
+    font-size: 1.5vw;
+}
+
+.booking-section {
+    padding: 2rem 9%; /* Adjust padding as needed */
+   
+    border-top: 2px solid #ccc; /* Optional top border for separation */
+}
+
+.booking-form {
+    margin-top: 2rem; /* Space between content and form */
+}
+
+.booking-form .form-rows {
+    display: flex;
+    justify-content: space-between; /* Adjust layout */
+    margin-bottom: 1rem; /* Space between rows */
+}
+
+.form-groups {
+    flex: 1; /* Allow form groups to take equal space */
+    margin-right: 1rem; /* Optional space between groups */
+}
+
+.form-groups:last-child {
+    margin-right: 0; /* Remove margin from the last group */
+}
+
+.company-info {
+    padding: 4rem 9%; /* Adjust padding as needed */
+    background-color: #fff; /* White background for clarity */
+    border-top: 1px solid #ccc; /* Optional top border for separation */
+    text-align: center; /* Center-align text */
+}
+
+.info-title {
+    font-size: 4rem; /* Title font size */
+    color: var(--black); /* Title color */
+    margin-bottom: 5rem; /* Space below the title */
+}
+
+.info-description {
+    font-size: 2.6rem; /* Description font size */
+    color: var(--light-color); /* Description color */
+    line-height: 1.5; /* Improve readability */
+}
+
+
+
+
+
+
+
+.car-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem; /* Space below the header */
+}
+
+.car-display {
+    display: grid;
+    flex-direction: row; /* Align image and details side by side */
+    align-items: flex-start;
+    gap: 5rem; /* Add some space between the image and details */
+    margin-bottom: 0; /* Add margin to separate each car section */
+}
+
+
+.car {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 2rem; /* Space between image and details */
+    margin: 7rem;
+   
+}
+
+.car-image {
+    flex: 1;
+}
+
+.car-image img {
+    width: 95%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.car-details {
+    flex: 1; /* Make the details container flexible */
+}
+
+.car-name {
+    font-size: 3.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.car-button {
+    padding: 0.7rem 1.5rem;
+    background-color: var(--yellow);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.car-button:hover {
+    background-color: var(--light-yellow);
+}
+
+.car-price {
+    font-size: 1.9rem;
+    color: var(--yellow);
+    margin-bottom: 1rem;
+}
+
+.car-accessories ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    
+}
+
+.car-accessories li {
+    font-size: 1.5rem; /* Change font size */
+    margin-bottom: 1rem; /* Space between items */
+    color: var(--black); /* Change text color if needed */
+    margin-left: 3.9rem;
+}
+
+.car-description {
+    font-size: 1.9rem;
+    color: black;
+}
+
+.car-icons {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Add space between each icon group */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.car-icons i {
+    font-size: 1.9rem; /* Adjust the icon size */
+    margin-right: 0.5rem;
+    color: var(--light-color); /* Optional: Change icon color */
+}
+
+.car-icon-group {
+    display: flex;
+    align-items: center;
+}
+
+.car-icon-text {
+    font-size: 1.4rem; /* Text size next to icons */
+    color: var(--black); /* Text color */
+}
+
+
+
+
+
+
+
+
+
+/* Popup Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    z-index: 999;
+}
+
+/* Popup Content */
+.popup-content {
+    position: relative;
+    width: 100%;
+    max-width: 93%;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
+    max-height: 80vh; /* Set the maximum height (80% of the viewport height) */
+    overflow-y: auto; /* Enable vertical scrollbar when content exceeds max-height */
+    box-sizing: border-box; /* Ensures padding is included in the height calculation */
+}
+
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.9rem;
+    cursor: pointer;
+    color: #333;
+}
+
+
+
+
+
+
+
+.about-us {
+    padding: 50px 20px;
+    max-width: auto;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.about-us h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    text-align: left;
+}
+
+.mission, .values, .team, .history {
+    margin-bottom: 40px;
+}
+
+.mission h2, .values h2, .team h2, .history h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.values ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.values ul li {
+    margin-bottom: 10px;
+}
+
+.values ul li strong {
+    color: #333;
+}
+
+.about-content p {
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+
+
+
+
+
+/* Step 2 Section: Flexbox layout for header */
+
+.step2-header {
+    display: flex;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: center; /* Vertically align items */
+    padding: 2rem 9%;
+    margin-bottom: 2rem;
+}
+
+/* Left content (Step 2 text and dropdown) */
+.left-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-text{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: 1.2rem;
+}
+
+/* Dropdown button styling (Step 2 dropdown) */
+.dropdown1 .dropbtn1 {
+    background-color: var(--yellow);
+    color: white;
+    width: 340px;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    border-radius: .5rem;
+    margin-top: 1rem; /* Add spacing below the text */
+}
+
+.dropdown1 .dropdown1-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 340px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown1 .dropdown1-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.6rem;
+}
+
+.dropdown1 .dropdown1-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown1:hover .dropdown1-content {
+    display: block;
+}
+
+/* Filter and Sort Dropdowns on the right */
+.filter-sort-container {
+    display: flex;
+    gap: 1.5rem; /* Space between the two dropdowns */
+    
+}
+
+/* Extra Services Box Styling */
+.extra-services-box {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 152%;
+}
+
+.extra-services-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #9e9e9e;
+}
+
+.extra-services-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #9e9e9e;
+}
+
+.service-description {
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+.service-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.service-price p {
+    font-size: 1.6rem;
+    color: var(--yellow);
+    margin: 0;
+}
+
+.service-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+    background-color: var(--yellow);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.service-btn:hover {
+    background-color: var(--light-yellow);
+}
+
+/* Payment Summary Box */
+.payment-summary {
+    display: flex;
+    justify-content: space-between; /* Align left and right side */
+    padding: 1rem 0; /* Padding between items */
+    margin-top: 1rem;
+    border-top: 1px solid #ccc; /* Optional top border for separation */
+}
+
+.summary-left, .summary-right {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space between the price items */
+}
+
+.summary-left p, .summary-right p {
+    font-size: 1.6rem; /* Adjust font size */
+    margin: 0.5rem 0; /* Space between lines */
+}
+
+.summary-left {
+    text-align: left; /* Align text on the left side */
+    width: 50%; /* Allocate 50% width for labels */
+}
+
+.summary-right {
+    text-align: right; /* Align text on the right side */
+    width: 50%; /* Allocate 50% width for prices */
+}
+
+/* Button Section Layout */
+.button-section {
+    display: flex;
+    justify-content: space-between; /* Align buttons to the left and right */
+    margin-top: 2rem; /* Add space above the buttons */
+    margin-left: 10rem;
+    margin-right: 10rem;
+    border-top: 1px solid #ccc;
+    padding: 2rem;
+}
+
+/* Back Button Styling */
+.back-btn {
+    padding: 1rem 2rem;
+    background-color: var(--light-yellow); /* Different color for the back button */
+    color: black;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Continue Button Styling */
+.continue-btn {
+    padding: 1rem 2rem;
+    background-color: var(--yellow); /* Continue button color */
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effects */
+.back-btn:hover {
+    background-color: var(--yellow); /* Optional hover effect for the back button */
+    color: white;
+}
+
+.continue-btn:hover {
+    background-color: var(--light-yellow); /* Optional hover effect for continue */
+    color: var(--black);
+}
+
+.lastbtn {
+    padding: 1rem 2rem;
+    background-color: var(--yellow); /* Continue button color */
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 15rem;
+}
+
+.lastbtn:hover {
+    background-color: var(--light-yellow); /* Optional hover effect for continue */
+    color: var(--black);
+}
+
+
+/* Personal Details Section */
+.personal-details-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 85%;
+    margin: 0 auto; /* Center the box on the page */
+}
+
+/* Box Styling */
+.details-box {
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.details-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: left; /* Align title to the left */
+}
+
+/* Form Row for Horizontal Layout */
+.form-row {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Space between fields */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Form Group */
+.form-group1 {
+    flex: 1; /* Allow fields to take equal space */
+    min-width: 150px; /* Minimum width for each field */
+    margin-right: 1rem; /* Space between fields */
+}
+
+/* Remove margin from the last field */
+.form-group1:last-child {
+    margin-right: 0; 
+}
+
+/* Label Styling */
+.form-group1 label {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--black); /* Optional: Customize label color */
+    text-align: left; /* Align label text to the left */
+}
+
+/* Input Fields */
+.form-input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left; /* Ensure input text is aligned to the left */
+}
+
+/* Upload File Input */
+input[type="file"] {
+    border: none;
+}
+
+video {
+    width: 300px; /* Set the width you desire */
+    height: 225px; /* Set height to maintain aspect ratio (4:3) */
+    border: 1px solid #ccc; /* Optional: Border for better visibility */
+    border-radius: 5px; /* Optional: Rounded corners */
+    object-fit: cover; /* This ensures the video covers the area without distortion */
+}
+
+/* Address Box Styling */
+.address-box {
+    padding: 1.5rem;
+    background-color: #fff; /* White background for contrast */
+    border: 1px solid #ccc; /* Border for the box */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 2rem; /* Space above the address box */
+}
+
+/* Address Title Styling */
+.address-title {
+    font-size: 1.8rem; /* Font size for address title */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Space below the title */
+    text-align: left; /* Align title to the left */
+}
+
+/* Ensure existing form group styles apply */
+.form-group {
+    margin-bottom: 1.5rem; /* Space between form fields */
+}
+
+/* Payment Box Styling */
+.payment-box {
+    padding: 1.5rem;
+    background-color: #fff; /* White background for contrast */
+    border: 1px solid #ccc; /* Border for the box */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 2rem; /* Space above the payment box */
+}
+
+/* Payment Title Styling */
+.payment-title {
+    font-size: 1.8rem; /* Font size for payment title */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Space below the title */
+    text-align: left; /* Align title to the left */
+}
+
+/* Select Input Styling */
+select.form-input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+/* Rental Terms Box Styling */
+.terms-box {
+    padding: 1.5rem;
+    background-color: #fff; /* White background for contrast */
+    border: 1px solid #ccc; /* Border for the box */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 2rem; /* Space above the rental terms box */
+}
+
+/* Rental Terms Title Styling */
+.terms-title {
+    font-size: 1.8rem; /* Font size for terms title */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Space below the title */
+    text-align: left; /* Align title to the left */
+}
+
+/* Checkbox and Label Alignment */
+.form-group {
+    display: flex; /* Use flexbox to align items */
+    align-items: left; /* Center items vertically */
+}
+
+/* Label Styling */
+.form-group label {
+    font-size: 1.6rem; /* Font size for checkbox label */
+    display: flex; /* Use flex to align checkbox and text */
+    align-items: left; /* Center checkbox and text vertically */
+}
+
+/* Checkbox Input Styling */
+input[type="checkbox"] {
+    margin-right: 0.5rem; /* Space between checkbox and label text */
+    width: 20px; /* Adjust width for better alignment */
+    height: 20px; /* Adjust height for better alignment */
+    cursor: pointer; /* Change cursor to pointer when hovering */
+}
+
+.gcash-payment {
+    text-align: center; /* Center the content */
+    margin-top: 2rem; /* Add spacing above */
+}
+
+.gcash-logo {
+    max-width: 80px; /* Adjust the logo size */
+    margin-bottom: 1.5rem; /* Space below the logo */
+}
+
+.qr-code {
+    max-width: 200px; /* Adjust the QR code size */
+    margin-bottom: 1.5rem; /* Space below the QR code */
+}
+
+.scan-text {
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-bottom: 2rem; /* Space between text and button */
+}
+
+.submit-btn {
+    padding: 1rem 2.5rem;
+    background-color: var(--yellow);
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--light-yellow);
+    color: var(--black);
+}
+
+.upload-label {
+    display: block;
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-bottom: 0.5rem; /* Space between label and input */
+}
+
+.upload-input {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.manage-booking-section {
+    text-align: center; /* Center all content */
+    margin: 8rem; /* Add spacing above the section */
+    padding: 2rem; /* Add padding around the section */
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ccc; /* Optional: Border around the section */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.manage-booking-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem; /* Space between the title and the inputs */
+    color: var(--black);
+}
+
+.form-grou {
+    margin-bottom: 1.5rem; /* Space between form fields */
+}
+
+.form-label {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem; /* Space between label and input */
+    text-align: left; /* Align labels to the left */
+    color: var(--black);
+}
+
+.form-label1 {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem; /* Space between label and input */
+    text-align: left; /* Align labels to the left */
+    color: white;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.view-booking-btn {
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    background-color: var(--yellow);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.view-booking-btn:hover {
+    background-color: var(--light-yellow);
+    color: var(--black);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Filter and Sort dropdown styling */
+.dropdown2 .dropbtn2 {
+    width: 150px; /* Adjust button width */
+    background-color: var(--yellow);
+    color: white;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    border-radius: .5rem;
+    margin-top: 13rem;
+}
+
+.dropdown2 .dropdown2-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown2 .dropdown2-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.6rem;
+}
+
+.dropdown2 .dropdown2-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown2:hover .dropdown2-content {
+    display: block;
+}
+
+/* Booking Details Box */
+.booking-details-box {
+    padding: 2rem; /* Internal padding */
+    width: 25%; /* Adjust this width as needed */
+    height: 200px;
+    background-color: #fff;
+    border: 2px solid #ccc; /* Visible border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 8px;
+    margin-top: 2rem; /* Space between the dropdowns and the box */
+    margin-left: 12rem; /* Align the box to the left */
+}
+
+.booking-details-box1 {
+    padding: 2rem; /* Internal padding */
+    width: 25%; /* Adjust this width as needed */
+    height: 450px;
+    background-color: #fff;
+    border: 2px solid #ccc; /* Visible border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 8px;
+    margin-top: 2rem; /* Space between the dropdowns and the box */
+    margin-left: 12rem; /* Align the box to the left */
+    display: flex;
+    
+}
+
+.booking-details h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.booking-details p {
+    font-size: 1.6rem;
+    color: var(--light-color);
+    margin-bottom: 1.5rem;
+}
+
+.content-container {
+    display: flex;
+    gap: 2rem; /* Space between the boxes */
+}
+
+/* Car Details Box Styling */
+.car-details-box1 {
+    width: 100%; /* Adjust width as needed */
+    margin-top: 1.5rem; /* Space above the box */
+    padding: 1rem;
+    border: 1px solid #ccc; /* Border for the box */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center; /* Center the contents */
+}
+
+.car-image1 {
+    max-width: 80%; /* Ensure the image doesn't take up the full width */
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for the image */
+}
+
+.car-details-box {
+    padding: 1.5rem; /* Internal padding */
+    background-color: #fff; /* Background color */
+    border: 2px solid #ccc; /* Border for the box */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 1rem; /* Space above the box */
+    width: 750px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.car-details-container {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between image and button */
+    margin-top: 1rem; /* Space above the container */
+}
+
+.car-name {
+    font-size: 2rem; /* Size for car name */
+    margin-bottom: 1.5rem; /* Space below the car name */
+}
+
+.car-image {
+    flex: 1; /* Allow the image to take up space */
+}
+
+.car-image img {
+    width: 400px; /* Set a suitable width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: for rounded corners */
+}
+
+.car-book-button {
+    text-align: right; /* Align the button to the right */
+}
+
+.book-now-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.6rem;
+    width: 20rem;
+    background-color: var(--yellow);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+    background-color: var(--light-yellow); /* Change color on hover */
+}
+
+.car-icons1 {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 2rem; /* Space between icons */
+    margin-top: 1rem; /* Space above the icons */
+    background-color: #e6e6e6;
+}
+
+.car-icon-group1 {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    align-items: center; /* Center icons horizontally */
+    margin: 3rem;
+}
+
+.car-icons1 i {
+    font-size: 2rem; /* Size for the icons */
+    color: var(--black); /* Icon color */
+    margin-bottom: 0.5rem; /* Space below the icons */
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-between; /* Space between columns */
+    margin-top: 1.5rem; /* Space above the features */
+    margin-left: 3rem;
+}
+
+.features-column {
+    flex: 1; /* Equal width for both columns */
+}
+
+.features-column ul {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 1.5rem; /* Space from the left */
+    color: var(--black); /* Text color */
+}
+
+.features-column li {
+    font-size: 1.6rem; /* Font size for features */
+    margin-bottom: 0.5rem; /* Space between items */
+}
+
+.car-description-container {
+    margin-top: 1.5rem; /* Space above the description */
+    padding: 1rem; /* Internal padding */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.car-description-container h3 {
+    font-size: 2rem; /* Title font size */
+    color: var(--black); /* Title color */
+    margin-bottom: 1rem; /* Space below the title */
+}
+
+.car-description-container p {
+    font-size: 1.6rem; /* Description font size */
+    color: var(--light-color); /* Text color */
+    line-height: 1.5; /* Improve readability */
+}
+
+.car-details-container {
+    display: block; /* Ensure this container does not apply flex/grid layout */
+    width: 10%; /* Optional: make it full width */
+}
+
+.cd{
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: .5rem;
+    overflow: hidden;
+    z-index: 1000;
+    width: 26rem;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 1rem 2rem;
+    color: var(--black);
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 1.7rem;
+}
+
+.dropdown-item:hover {
+    background-color: var(--light-yellow);
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+    display: none;
+}
+
+#menu-btn.fa-times{
+    transform: rotate(180deg);
+}
+
+
+.header.active{
+    box-shadow: var(--box-shadow);
+    padding:2rem 9%;
+}
+
+.login-form-container{
+    position: fixed;
+    top: -105%; left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.login-form-container.active{
+    top: 0;
+    opacity: 1;
+}
+
+.login-form-container form{
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+    border: var(--border);
+    text-align: center;
+    width: 40rem;
+}
+
+.login-form-container form .buttons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login-form-container form .btn{
+    display: block;
+    width: 100%;
+    margin: .5rem 0;
+}
+
+.login-form-container form h3{
+    color: var(--black);
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.login-form-container form .box{
+    margin: .7rem 0;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+    font-size: 1.6rem;
+    padding: 1rem 1.2rem;
+    border: var(--border);
+    border-radius: .5rem;
+}
+
+.login-form-container form p{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.login-form-container form p a{
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+.login-form-container #close-login-form{
+    position: absolute;
+    top: 1.5rem; right: 2.5rem;
+    font-size: 5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.home{
+    padding-top: 10rem;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.home h1{
+    font-size: 5.5vw;
+    text-transform: uppercase;
+    color: white;
+}
+
+.home img{
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.icons-container{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    background: #eee;
+}
+
+.icons-container .icons{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+
+.icons-container .icons i{
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    background: #eee;
+    color: var(--black);
+    text-align: center;
+}
+
+.icons-container .icons .content h3{
+    color: var(--yellow);
+    font-size: 2.5rem;
+}
+
+.icons-container .icons .content p{
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+
+.icons-container .icons:hover{
+    background: var(--black);
+}
+
+.icons-container .icons:hover i{
+    background: var(--yellow);
+}
+
+.icons-container .icons:hover .content h3{
+    color:#fff;
+}
+
+.icons-container .icons:hover .content p{
+    color: #eee;
+}
+
+.vehicles .vehicles-slider{
+    padding-bottom: 5rem;
+}
+
+.vehicles .vehicles-slider .box{
+    text-align: center;
+
+}
+
+.vehicles .vehicles-slider .box img{
+    width: 100%;
+    opacity: .5;
+    transform: scale(.8);
+}
+
+.vehicles .vehicles-slider .box .content{
+    transform: scale(0);
+    padding-top: 1rem;
+}
+
+.vehicles .vehicles-slider .swiper-slide-active img{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.vehicles .vehicles-slider .swiper-slide-active .content{
+    transform: scale(1);
+}
+
+.vehicles .vehicles-slider .box .content h3{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.vehicles.vehicles-slider .box .content .price{
+    font-size: 2.5rem;
+    color: var(--yellow);
+    padding: 1rem 0;
+    font-weight: bolder;
+}
+
+.vehicles .vehicles-slider .box .content .price span{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    font-weight: normal;
+}
+
+.vehicles .vehicles-slider .box .content p{
+    font-size: 1.6rem;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    border-top: var(--border);
+    color: var(--light-color);
+}
+
+.vehicles .vehicles-slider .box .content p span{
+    color: var(--yellow);
+    font-size: .8rem;
+    padding: 0 .5rem;
+}
+
+.swiper-pagination-bullet-active{
+    background: var(--yellow);
+}
+
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.services .box-container .box{
+    text-align: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+}
+
+.services .box-container .box i{
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    font-size: 2.5rem;
+    color: var(--black);
+    background: var(--yellow);
+    border-radius: 50%;
+}
+
+.services .box-container .box h3{
+    color: var(--black);
+    font-stretch: 2.2rem;
+}
+
+.services .box-container .box p{
+    color: var(--light-color);
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.services .box-container .box:hover{
+    background: var(--black);
+}
+
+.services .box-container .box:hover h3{
+    color: #fff;
+}
+
+.services .box-container .box:hover p{
+    color: #eee;
+}
+
+.featured {
+    margin-top: 100px; /* Adjust this value based on your header height */
+}
+
+.featured .featured-slider{
+    padding: 1rem;
+    padding-bottom: 4rem;
+}
+
+.featured .featured-slider .box{
+    text-align: left;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: .5rem;
+    height: auto;
+}
+
+.featured .featured-slider .box img{
+   /* height: 13rem;*/
+   width: 100%;
+   padding: 2rem;
+}
+
+
+.featured .featured-slider .box:hover img{
+    transform: scale(.9);
+}
+
+.featured .featured-slider .box h3{
+    font-size: 2.2rem;
+    color: var(--black);
+}
+
+.featured .featured-slider .box .stars{
+    padding: 1rem 0;
+}
+
+.featured .featured-slider .box .stars i{
+    font-size: 1.7rem;
+    color: var(--yellow);
+}
+
+.featured .featured-slider .box .price{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.featured .featured-slider .box .btn{
+    text-align: center;
+}
+
+.newsletter{
+    padding: 6rem 2rem;
+    text-align: center;
+    background: url(../image/car.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.newsletter h3{
+    color: var(--yellow);
+    font-size: 3rem;
+}
+
+.newsletter p{
+    color: var(--light-color);
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.newsletter form{
+    margin: 1rem auto;
+    max-width: 60rem;
+    height: 5rem;
+    display: flex;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    border-radius: 5rem;
+}
+
+.newsletter form input[type="email"]{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    padding: 0 2rem;
+}
+
+.newsletter form input[type="submit"]{
+    height: 100%;
+    width: 17rem;
+    font-size: 1.7rem;
+    color: var(--black);
+    background: var(--light-yellow);
+    cursor: pointer;
+}
+
+.newsletter form input[type="submit"]:hover{
+    background: var(--yellow );
+}
+
+.reviews .reviews-slider{
+    padding-bottom: 3rem;
+}
+
+.reviews .reviews-slider .box{
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    opacity: .4;
+    transform: scale(.9);
+}
+
+.reviews .reviews-slider .swiper-slide-active{
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+}
+
+.reviews .reviews-slider .box img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.reviews .reviews-slider .box .content p{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.reviews .reviews-slider .box .content h3{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+}
+
+.reviews .reviews-slider .box .content .stars i{
+    font-size: 2.7rem;
+    color: var(--yellow);
+}
+
+.contact{
+    margin-top: 100px;
+}
+.contact .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contact .row .map{
+    flex: 1 1 42rem;
+    width: 100%;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.contact .row form{
+    flex: 1 1 42rem;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.contact .row form h3{
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.contact .row form .box{
+    margin: .7rem 0;
+    width: 100%;
+    border: var(--border);
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    border-radius: .5rem;
+}
+
+.contact .row form textarea{
+    height: 15rem;
+    resize: none;
+}
+
+.footer{
+    background: var(--light-yellow);
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    color: var(--black);
+    font-size: 2.2rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    color: var(--light-color);
+    font-size: 1.4rem;
+    display: block;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color: var(--black);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: var(--border);
+    padding: 1rem;
+    padding-top: 2.5rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+
+.vehicle-details-container {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: auto;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .left-box, .right-box {
+            flex: 1;
+            padding: 2rem;
+            background: #fff;
+            box-shadow: var(--box-shadow);
+            border-radius: .5rem;
+        }
+
+        .left-box img {
+            width: 100%;
+            height: auto;
+            border-radius: .5rem;
+        }
+
+        .left-box h2 {
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
+            color: var(--black);
+        }
+
+        .left-box p {
+            font-size: 1.6rem;
+            margin: 1rem 0;
+            color: var(--light-color);
+        }
+
+        .left-box .car-info {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .car-info .info-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgb(207, 205, 205);
+            border-radius: .5rem;
+            text-align: center;
+        }
+
+        .car-info .info-box i {
+            font-size: 3rem;
+            color: var(--yellow);
+        }
+
+        .car-info .info-box span {
+            font-size: 1.5rem;
+            color: var(--black);
+        }
+
+        .right-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .right-box .price {
+            font-size: 2.5rem;
+            color: var(--yellow);
+            margin-bottom: 2rem;
+        }
+
+        .right-box p{
+            font-size: 1.5rem;
+        }
+
+        .right-box form .box {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            width: 100%;
+            border: var(--border);
+            border-radius: .5rem;
+            font-size: 1.6rem;
+            color: var(--black);
+        }
+
+        .right-box form .btn {
+            width: 100%;
+            background: var(--yellow);
+            color: #fff;
+            padding: 1rem;
+            font-size: 1.7rem;
+            cursor: pointer;
+            border-radius: .5rem;
+        }
+
+        .right-box form .btn:hover {
+            background: var(--light-yellow);
+            color: var(--black);
+        }
+
+        .right-box form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+
+
+
+
+
+
+
+ /* Tabs container */
+
+ .tab-box {
+    margin-top: 3rem;
+    border: 1px solid #ddd; /* Border around the box */
+    border-radius: 8px;     /* Rounded corners */
+    padding: 1rem;          /* Padding inside the box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for a lifted effect */
+    background-color: #fff; /* White background for the box */
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd; /* Border between tabs and content */
+    margin-bottom: 1rem; /* Space between tabs and content */
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem;
+    background: var(--light-yellow);
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.tab-btn.active {
+    background: var(--yellow);
+    color: #fff;
+}
+
+/* Tab content */
+.tab-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-pane ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tab-pane ul li {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+}
+
+.tab-pane ul li i {
+    margin-right: 0.5rem;
+}
+
+.accessories-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.6rem;
+}
+
+.accessories-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd; /* Border between rows */
+}
+
+.accessories-table td:first-child {
+    text-align: left;
+    font-weight: bold; /* Bold text for labels */
+}
+
+.accessories-table td:last-child {
+    text-align: center;
+    color: #f00; /* Red color for 'Not Available' */
+}
+
+.accessories-table td:last-child:contains('Available') {
+    color: #0a0; /* Green color for 'Available' */
+}
+
+.accessories-table tr:last-child td {
+    border-bottom: none; /* Remove border for the last row */
+}
+
+
+
+
+.profile-box {
+    width: 600px;
+    margin: 150px auto 0;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+}
+
+.profile-image {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    border-radius: 50%;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.profile-info {
+    text-align: left; /* Align text to the left */
+}
+
+.profile-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-location {
+    font-size: 18px;
+    color: #666;
+}
+
+
+.settings-section {
+    width: 600px;
+    margin: 20px auto; /* Center the section and adjust margin as needed */
+    padding: 20px;
+    
+}
+
+.settings-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.settings-item {
+    margin-bottom: 15px;
+}
+
+.settings-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.settings-item input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.save-button {
+    width: 100%;
+    padding: 10px;
+    background-color:var(--light-yellow);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: var(--yellow);
+}
+
+
+.form-rows-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.form-rows {
+    flex: 1; /* Each .form-rows takes up equal space */
+}
+
+
+
+
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    .header.active{
+        padding:2rem;
+    }
+    .section{
+        padding: 2rem;
+    }
+}
+
+@media(max-width:768px){
+    #menu-btn{
+        display: block;
+    }
+
+    .header #user-btns i{
+        display: block;
+    }
+    .header .navbar{
+        position: absolute;
+        top:99%; left:0; right:0;
+        background: #fff;
+        border-top: var(--border);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .header .navbar a{
+        display: block;
+        margin: 2rem;
+        font-size: 2rem;
+    }
+
+    .vehicle-details-container {
+        flex-direction: column;
+    }
+
+    .left-box {
+        order: 1; /* Move to the bottom */
+    }
+
+    .right-box {
+        order: 2; /* Stay on top */
+    }
+}
+
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+}
+
+
+/* General responsive adjustments for tablets and phones */
+
+/* Tablets (up to 991px) */
+@media (max-width: 991px) {
+    /* Adjust font sizes */
+    html {
+        font-size: 55%;
+    }
+
+    /* Section padding */
+    .section {
+        padding: 2rem;
+    }
+
+    /* Form adjustments */
+    .form-inputs, .form-input1 {
+        width: 100%; /* Full-width on smaller screens */
+    }
+
+    .booking-details-box, .booking-details-box1 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* User profile layout */
+    .profile-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 100%; /* Ensure full width on tablets */
+    }
+
+    /* Car display grid */
+    .car-display {
+        grid-template-columns: 1fr; /* Single column on tablets */
+        margin-left: 5%;
+    }
+}
+
+/* Small Tablets and Large Phones (up to 768px) */
+@media (max-width: 768px) {
+    /* Form rows to stack */
+    .form-rows-container {
+        flex-direction: column; /* Stack the columns vertically */
+    }
+
+    .form-rows {
+        width: 100%; /* Make each .form-rows full width when stacked */
+    }
+
+    /* Car details and image layout */
+    .car {
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem 0;
+    }
+
+    /* Vehicle details container for step2 page */
+    .vehicle-details-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .btn{
+        width: 30%;
+    }
+
+    /* Buttons full-width on smaller screens */
+    .form-button, .continue-btn, .back-btn, .lastbtn {
+        width: 100%;
+    }
+}
+
+/* Small phones (up to 450px) */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    /* Adjust heading sizes */
+    .heading {
+        font-size: 3rem;
+    }
+
+    /* Booking details and car details boxes */
+    .booking-details-box, .booking-details-box1 {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Newsletter and footer adjustments */
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    /* Footer text alignment */
+    .footer .box-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Form fields */
+    .form-label, .form-input {
+        font-size: 1.4rem;
+        padding: 0.7rem;
+    }
+
+    /* Address, payment, and rental terms boxes */
+    .address-box, .payment-box, .terms-box {
+        padding: 1rem;
+        border-radius: 5px;
+    }
+}
+
+/* Extra Small Screens (e.g., 375px width and below) */
+@media (max-width: 375px) {
+    .extra-services-box {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    .extra-services-title {
+        font-size: 1.3rem;
+    }
+
+    .extra-services-item {
+        flex-direction: column;
+        margin-top: 1.5rem;
+    }
+
+    .service-description, .service-price p {
+        font-size: 1.2rem;
+    }
+
+    .service-btn {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .summary-left, .summary-right {
+        width: 100%; /* Full width on small screens */
+        text-align: left;
+        padding: 0.5rem 0;
+    }
+
+    .button-section {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .back-btn, .continue-btn {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    /* Stack items vertically */
+    .content-container {
+        flex-direction: column;
+    }
+
+    /* Arrange booking and car details */
+    .car-details-container {
+        order: -1;
+    }
+
+    .booking-details-box1 {
+        order: 1;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .car-details-box {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Large Phones and Small Tablets (376px - 768px) */
+@media (min-width: 376px) and (max-width: 768px) {
+    .extra-services-box {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .extra-services-title {
+        font-size: 1.5rem;
+    }
+
+    .extra-services-item {
+        margin-top: 2rem;
+    }
+
+    .service-description {
+        font-size: 1.3rem;
+    }
+
+    .service-price p {
+        font-size: 1.4rem;
+    }
+
+    .service-btn {
+        padding: 0.7rem 1.3rem;
+        font-size: 1.2rem;
+    }
+
+    .summary-left, .summary-right {
+        width: 100%; /* Full width for smaller screens */
+        text-align: center;
+    }
+
+    .button-section {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .back-btn, .continue-btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /* Stack items vertically */
+    .content-container {
+        flex-direction: column;
+    }
+
+    .car-details-container {
+        order: -1;
+    }
+
+    .booking-details-box1 {
+        order: 1;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .car-details-box {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Large Tablets (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .extra-services-box {
+        width: 100%;
+    }
+
+    .extra-services-title {
+        font-size: 1.7rem;
+    }
+
+    .extra-services-item {
+        flex-direction: row;
+        margin-top: 2.5rem;
+    }
+
+    .service-description, .service-price p {
+        font-size: 1.5rem;
+    }
+
+    .service-btn {
+        font-size: 1.3rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .summary-left, .summary-right {
+        width: 50%;
+    }
+
+    .button-section {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .back-btn, .continue-btn {
+        width: auto;
+    }
+
+    /* Stack items vertically if needed */
+    .content-container {
+        flex-direction: column;
+    }
+
+    .car-details-container {
+        order: -1;
+    }
+
+    .booking-details-box1 {
+        order: 1;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .car-details-box {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

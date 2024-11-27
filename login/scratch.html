@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="index.html" class="logo">
+            <img src="image/logo.jpg" alt="Car Rental Logo">
+            <h2>chaduy</h2>
+        </a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="vehicle.html">vehicles</a>
+            <a href="#about">about</a>
+            <a href="contact.html">contact</a>
+        </nav>
+
+        <div id="login-btn">
+            <button class="btn dropdown-btn">Menu</button>
+            <i class="far fa-user"></i>
+            <div class="dropdown-content">
+                <a href="#profile">Profile</a>
+                <a href="#settings">Settings</a>
+                <a href="#" id="login-link">Login</a> <!-- Changed id to "login-link" -->
+            </div>
+        </div>
+    </header>
+    
+    <div class="login-form-container" id="login-form-container">
+        <span class="fas fa-times" id="close-login-form"></span>
+        <form action="">
+            <h3>user login</h3>
+            <input type="email" placeholder="email" class="box">
+            <input type="password" placeholder="password" class="box">
+            <p>forget your password <a href="#">click here</a></p>
+            <input type="submit" value="login now" class="btn">
+            <p>don't have an account <a href="#">create one</a></p>
+        </form>
+    </div>
+
+    <script>
+        // Toggle dropdown menu
+        document.querySelector('.dropdown-btn').addEventListener('click', function() {
+            document.querySelector('.dropdown-content').classList.toggle('show');
+        });
+
+        // Handle dropdown close when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        };
+
+        // Show login form when "Login" link is clicked
+document.getElementById('login-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    document.getElementById('login-form-container').classList.add('active');
+});
+
+// Hide login form when close button is clicked
+document.getElementById('close-login-form').addEventListener('click', function() {
+    document.getElementById('login-form-container').classList.remove('active');
+});
+
+    </script>
+</body>
+</html>
